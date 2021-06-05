@@ -16,7 +16,7 @@ ENCODER_EMB_DIM=768
 ENCODER_LAYERS=8
 ENCODER_ATTENTION_HEADS=12
 
-CUDA_VISIBLE_DEVICES=3 python train.py \
+CUDA_VISIBLE_DEVICES=0 python train.py \
   data-bin/finetune/mips-O0 \
   --num-classes $NUM_CLASSES \
   --task data_structure_mf --criterion data_structure_mf --arch roberta_mf_nau \
