@@ -6,7 +6,7 @@
 
 <p align="center"><img src="figs/stateformer_workflow.png" alt="workflow" width="800"></p>
 
-We develop a hierarchical input combination module to learn across multiple modalities of the program, i.e., code, execution trace, structures (positional embeddings) with self-attention layers in Transformer. We employ [Neural Arithmetic Units (NAU)](https://arxiv.org/abs/2001.05016) to help the model learn how instructions manipulate numerical values. To implement StateFormer, we extend [Fairseq](https://github.com/pytorch/fairseq) toolkit. 
+We develop a hierarchical input combination module to learn across multiple modalities of the program, i.e., code, execution trace, structures (positional embeddings) with self-attention layers in Transformer. We further employ [Neural Arithmetic Units (NAU)](https://arxiv.org/abs/2001.05016) to help the model learn how instructions manipulate numerical values. To implement StateFormer, we extend [Fairseq](https://github.com/pytorch/fairseq) toolkit. 
 
 <p align="center"><img src="figs/stateformer_arch.png" alt="arch" width="800"></p>
 
