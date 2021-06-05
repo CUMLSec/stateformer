@@ -10,7 +10,7 @@ WARMUP_UPDATES=100    # Warmup the learning rate over this many updates
 PEAK_LR=1e-5          # Peak learning rate, adjust as needed
 TOKENS_PER_SAMPLE=512 # Max sequence length
 MAX_POSITIONS=512     # Num. positional embeddings (usually same as above)
-MAX_SENTENCES=32      # Number of sequences per batch (batch size)
+MAX_SENTENCES=8       # Number of sequences per batch (batch size)
 NUM_CLASSES=44
 ENCODER_EMB_DIM=768
 ENCODER_LAYERS=8
@@ -26,7 +26,7 @@ CUDA_VISIBLE_DEVICES=0 python train.py \
   --dropout 0.1 --attention-dropout 0.1 --weight-decay 0.01 \
   --best-checkpoint-metric accuracy --maximize-best-checkpoint-metric \
   --encoder-layers $ENCODER_LAYERS --encoder-embed-dim $ENCODER_EMB_DIM --encoder-attention-heads $ENCODER_ATTENTION_HEADS \
-  --max-positions 512 --max-sentences $MAX_SENTENCES \
+  --max-positions 512 --max-sentences $MAX_SENTENCES --update-freq 4 \
   --max-update $TOTAL_UPDATES --log-format json --log-interval 10 \
   --no-epoch-checkpoints --save-dir $CHECKPOINT_PATH/ \
   --memory-efficient-fp16 \

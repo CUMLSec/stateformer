@@ -28,9 +28,13 @@ Then, install the latest Pytorch (assume you have GPU and CUDA installed -- chec
 
 `conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia`
 
-Finally, enter the StateFormer directory: e.g., `path/to/StateFormer`, and install StateFormer:
+Finally, clone the StateFormer and enter its directory: e.g., `path/to/StateFormer`, and install StateFormer:
 
-`pip install --editable .`
+```bash
+git clone https://github.com/CUMLSec/stateformer.git
+cd stateformer
+pip install --editable .
+```
 
 ### Optional:
 
@@ -82,11 +86,17 @@ Likewise, the binarized data will be stored at `data-bin/finetune/mips-O0`
 
 ## Training and Testing
 
+Before starting training, create a directory that the logged training restuls can be stored:
+
+`mkdir result`
+
 To finetune the model on our provided samples (MIPS O0), run:
 
 `./command/finetune/finetune_mips_O0.sh`
 
-The script will load the pretrained weight parameters from `checkpoints/pretrain/` and finetunes the model. It is easy to edit `./command/finetune/finetune_mips_O0.sh` to finetune on other binarized data.
+The script will load the pretrained weight parameters from `checkpoints/pretrain/` and finetunes the model. If you encounter memory overflow, try to increase `--update-freq` and decrease `$MAX_SENTENCES` in the script. This will reduce the batch size but aggregate the gradient for more batches, resulting in the same effective batch size.
+
+It is easy to edit `./command/finetune/finetune_mips_O0.sh` to finetune on other binarized data.
 
 ### Optional
 

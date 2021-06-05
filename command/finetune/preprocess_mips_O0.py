@@ -28,3 +28,6 @@ for arch_opt in arch_opts:
          '--validpref',
          f'data-src/finetune/{arch_opt}/valid.label', '--destdir', f'data-bin/finetune/{arch_opt}/label',
          '--workers', '40'])
+
+    subprocess.run(
+        ['cp', '-r', f'data-bin/pretrain/cover', f'data-bin/finetune/{arch_opt}/'])
