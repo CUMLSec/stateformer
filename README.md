@@ -2,11 +2,11 @@
 
 ## Introduction
 
-[StateFormer](https://sites.google.com/site/kexinpeisite/stateformer.pdf?attredirects=0) is a tool that aims to recover types from binary executable based on transfer learning. We propose a pretraining task called Generative State Modeling (GSM) to learn assembly code operational semantics, and then transfer the learned knowledge for type inference.
+[StateFormer](https://sites.google.com/site/kexinpeisite/stateformer.pdf?attredirects=0) is a tool that aims to recover source-level type information from stripped binary executable based on transfer learning. Inspired by how human analyzer reason about the program, we propose a pretraining task called Generative State Modeling (GSM) to teach an ML model assembly code operational semantics, and then transfer the learned knowledge for type inference. See our [paper](https://sites.google.com/site/kexinpeisite/stateformer.pdf?attredirects=0) for details.
 
 <p align="center"><img src="figs/stateformer_workflow.png" alt="workflow" width="800"></p>
 
-We propose a hierarchical input combination module to learn across multiple modalities of the program, i.e., code, execution trace, structures (positional embeddings), and architectural information (e.g., x86, ARM, MIPS) with self-attention layers in Transformer. To implement StateFormer, we extend [Fairseq](https://github.com/pytorch/fairseq). 
+We develop a hierarchical input combination module to learn across multiple modalities of the program, i.e., code, execution trace, structures (positional embeddings) with self-attention layers in Transformer. We employ [Neural Arithmetic Units (NAU)](https://arxiv.org/abs/2001.05016) to help the model learn how instructions manipulate numerical values. To implement StateFormer, we extend [Fairseq](https://github.com/pytorch/fairseq) toolkit. 
 
 <p align="center"><img src="figs/stateformer_arch.png" alt="arch" width="800"></p>
 
@@ -14,7 +14,7 @@ We propose a hierarchical input combination module to learn across multiple moda
 This repository includes StateFormer source code (see following for setup), [Raw Datasets](https://drive.google.com/drive/folders/1KpUMIWewzVZ7KkhIo3dKg8X9nfCUvvHV?usp=sharing), [Preprocessed Pretraining and Finetuning Datasets](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing) and the [Supplementary Material](https://drive.google.com/file/d/1vguDZs6ytWm2uL-yxmmCYW6Asl09Mfry/view?usp=sharing).
 
 ## Installation
-We recommend `conda` to setup the environment and install the required packages. Conda installation instructions can be found [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html). The following setup assumes Conda is installed and is running on Linux system (Windows should work too).
+We recommend `conda` to setup the environment and install the required packages. Conda installation instructions can be found [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html). The following setup assumes Conda is installed and is running on Linux system (though Windows should work too).
 
 First, create the conda environment,
 
@@ -58,9 +58,9 @@ Create the `checkpoints` and `checkpoints/pretrain` subdirectory in `path/to/Sta
 
 Download our [pretrained weight parameters](https://drive.google.com/file/d/1npWNDJM0lEtslpUNI19b2m_2wNcRTAy-/view?usp=sharing) and put in `checkpoints/pretrain`
 
-### Training and Testing Samples for Finetuning Type Inference
+### Training and Testing Samples for Finetuning
 
-We provide all training/testing(named as valid.*) samples of finetuning used in our paper at [here](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing). You can download and put them in `data-src/finetune`.
+We provide all training and testing(named as valid.*) samples of finetuning used in our paper at [here](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing). You can download and put them in `data-src/finetune`.
 If you want to prepare the finetuning data yourself, make sure you follow the format shown in `data-src/finetune`.
 
 The training/testing samples we provided (that you put in `data-src`) is in plaintext, which facilitates understanding and generating dataset by yourself. 
