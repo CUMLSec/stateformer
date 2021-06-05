@@ -4,11 +4,11 @@
 
 [StateFormer](https://sites.google.com/site/kexinpeisite/stateformer.pdf?attredirects=0) is a tool that aims to recover types from binary executable based on transfer learning. We propose a pretraining task called Generative State Modeling (GSM) to learn assembly code operational semantics, and then transfer the learned knowledge for type inference.
 
-![workflow](figs/stateformer_workflow.png)
+<img src="figs/stateformer_workflow.png" alt="workflow" width="1000">
 
 We propose a hierarchical input combination module to learn across multiple modalities of the program, i.e., code, execution trace, structures (positional embeddings), and architectural information (e.g., x86, ARM, MIPS) with self-attention layers in Transformer. To implement StateFormer, we extend [Fairseq](https://github.com/pytorch/fairseq). 
 
-![workflow](figs/stateformer_arch.png) 
+<img src="figs/stateformer_arch.png" alt="arch" width="1000">
 
 This repository includes StateFormer source code (see following for setup), [Raw Datasets](https://drive.google.com/drive/folders/1KpUMIWewzVZ7KkhIo3dKg8X9nfCUvvHV?usp=sharing), and the [supplementary Material](https://drive.google.com/file/d/1vguDZs6ytWm2uL-yxmmCYW6Asl09Mfry/view?usp=sharing).
 
