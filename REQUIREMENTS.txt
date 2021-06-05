@@ -1,0 +1,9 @@
+Hardware:
+
+8+ virtual CPU cores
+32GB+ RAM
+100GB+ Disk
+GPU supporting PyTorch 1.8.1 (see README.md)
+
+OS:
+Linux (e.g., Ubuntu) / Windows

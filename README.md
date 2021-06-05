@@ -11,10 +11,10 @@ We propose a hierarchical input combination module to learn across multiple moda
 <p align="center"><img src="figs/stateformer_arch.png" alt="arch" width="800"></p>
 
 
-This repository includes StateFormer source code (see following for setup), [Raw Datasets](https://drive.google.com/drive/folders/1KpUMIWewzVZ7KkhIo3dKg8X9nfCUvvHV?usp=sharing), and the [supplementary Material](https://drive.google.com/file/d/1vguDZs6ytWm2uL-yxmmCYW6Asl09Mfry/view?usp=sharing).
+This repository includes StateFormer source code (see following for setup), [Raw Datasets](https://drive.google.com/drive/folders/1KpUMIWewzVZ7KkhIo3dKg8X9nfCUvvHV?usp=sharing), [Preprocessed Pretraining and Finetuning Datasets](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing) and the [Supplementary Material](https://drive.google.com/file/d/1vguDZs6ytWm2uL-yxmmCYW6Asl09Mfry/view?usp=sharing).
 
 ## Installation
-We recommend `conda` to setup the environment and install the required packages.
+We recommend `conda` to setup the environment and install the required packages. Conda installation instructions can be found [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html). The following setup assumes Conda is installed and is running on Linux system (Windows should work too).
 
 First, create the conda environment,
 
@@ -60,7 +60,7 @@ Download our [pretrained weight parameters](https://drive.google.com/file/d/1npW
 
 ### Training and Testing Samples for Finetuning Type Inference
 
-We provide all training/testing(named as *valid*) samples of finetuning used in our paper at [here](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing). You can download and put them in `data-src/finetune`.
+We provide all training/testing(named as valid.*) samples of finetuning used in our paper at [here](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing). You can download and put them in `data-src/finetune`.
 If you want to prepare the finetuning data yourself, make sure you follow the format shown in `data-src/finetune`.
 
 The training/testing samples we provided (that you put in `data-src`) is in plaintext, which facilitates understanding and generating dataset by yourself. 
@@ -71,7 +71,8 @@ However, the plaintext data can not be directly fed to the model for training --
 
 This script will iterate through all directories in `data-src`, binarize each of them, and store the binarized dataset at `data-bin/finetune`
 
-*In case you do not want to binarize all dataset (and do not want to download all the dataset), we have already provided a sample training/testing set in `data-src/finetune`*, which is sampled from MIPS O0 binaries. 
+### Sample Finetuning Set
+In case you do not want to binarize all dataset (and do not want to download all the dataset), we have already provided a sample training/testing set in `data-src/finetune`*, which is sampled from MIPS O0 binaries. 
 
 To binarize the sample training data for finetuning, run:
 

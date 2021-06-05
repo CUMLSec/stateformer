@@ -1,0 +1,5 @@
+Artifacts (1) Available and (2) Evaluated - Reusable
+
+Reasons:
+(1) We release our artifact at publicly accessible Github repo: https://github.com/CUMLSec/stateformer.
+(2) We include the complete dataset and detailed instructions to run experiments described in our paper.
