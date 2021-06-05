@@ -112,3 +112,5 @@ To run pretraining (not recommended as it is time-consuming):
 
 ### Testing
 As described above, we name testing set as `valid`, such that our training script will automatically evaluate on the testing set after every epoch (similar to validation). Both the training and testing metrics are logged and printed during training.
+
+For example, when running finetuning for MIPS O0, as described above, you will observe the testing precision/recall/F1 close to the corresponding numbers in the Table 2 of the paper.
