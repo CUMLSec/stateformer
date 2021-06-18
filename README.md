@@ -64,7 +64,7 @@ Download our [pretrained weight parameters](https://drive.google.com/file/d/1npW
 
 ### Training and Testing Samples for Finetuning
 
-We provide all training and testing(named as valid.*) samples of finetuning used in our paper at [here](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing). You can download and put them in `data-src/finetune`.
+We provide all training and testing (named as valid.*) samples of finetuning used in our paper at [here](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing). You can download and put them in `data-src/finetune`.
 If you want to prepare the finetuning data yourself, make sure you follow the format shown in `data-src/finetune`.
 
 The training/testing samples we provided (that you put in `data-src`) is in plaintext, which facilitates understanding and generating dataset by yourself. 
@@ -76,7 +76,7 @@ However, the plaintext data can not be directly fed to the model for training --
 This script will iterate through all directories in `data-src`, binarize each of them, and store the binarized dataset at `data-bin/finetune`
 
 ### Sample Finetuning Set
-In case you do not want to binarize all dataset (and do not want to download all the dataset), we have already provided a sample training/testing set in `data-src/finetune`*, which is sampled from MIPS O0 binaries. 
+In case you do not want to binarize all dataset (and do not want to download all the dataset), we have already provided a sample training/testing set in `data-src/finetune/mips-O0`, which is sampled from MIPS O0 binaries. 
 
 To binarize the sample training data for finetuning, run:
 
@@ -86,7 +86,7 @@ Likewise, the binarized data will be stored at `data-bin/finetune/mips-O0`
 
 ## Training and Testing
 
-Before starting training, create a directory that the logged training restuls can be stored:
+Before starting training, create a directory that the logged training result can be stored:
 
 `mkdir result`
 
@@ -96,7 +96,7 @@ To finetune the model on our provided samples (MIPS O0), run:
 
 The script will load the pretrained weight parameters from `checkpoints/pretrain/` and finetunes the model. If you encounter memory overflow, try to increase `--update-freq` and decrease `$MAX_SENTENCES` in the script. This will reduce the batch size but aggregate the gradient for more batches, resulting in the same effective batch size.
 
-It is easy to edit `./command/finetune/finetune_mips_O0.sh` to finetune on other binarized data.
+It should be easy to edit `./command/finetune/finetune_mips_O0.sh` to finetune on other binarized data.
 
 ### Optional
 
