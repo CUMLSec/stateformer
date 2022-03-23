@@ -122,7 +122,7 @@ class DataStructureMF(LegacyFairseqTask):
         src_tokens = {}
         target = {}
         for field in self.fields:
-            split_path = os.path.join(self.args.data, field, split)
+            split_path = os.path.join(self.args.data, field, split) # data train test
 
             src_dataset = data_utils.load_indexed_dataset(
                 split_path,

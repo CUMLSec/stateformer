@@ -349,7 +349,7 @@ class RobertaClassificationList(nn.Module):
         x = self.dense(x)
         x = self.activation_fn(x)
         x = self.dropout(x)
-        x = self.out_proj(x)
+        x = self.out_proj(x) # bsz, seq_len, num_classes
         return x
 
 

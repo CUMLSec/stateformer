@@ -11,7 +11,7 @@ We develop a hierarchical input combination module to learn across multiple moda
 <p align="center"><img src="figs/stateformer_arch.png" alt="arch" width="800"></p>
 
 
-This repository includes StateFormer source code (see following for setup), [Raw Datasets](https://drive.google.com/drive/folders/1KpUMIWewzVZ7KkhIo3dKg8X9nfCUvvHV?usp=sharing), [Preprocessed Pretraining and Finetuning Datasets](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing) and the [Supplementary Material](https://drive.google.com/file/d/1vguDZs6ytWm2uL-yxmmCYW6Asl09Mfry/view?usp=sharing).
+This repository includes StateFormer source code (see following for setup), [Raw Datasets](https://drive.google.com/drive/folders/1FXlrGiZkch9bnAxlrm43IhYGC3r5NveA?usp=sharing), [Preprocessed Pretraining Datasets](https://drive.google.com/drive/folders/1HzT0sg0UtznOXr7m9PVXE5MZkNvctsX-?usp=sharing) and the [Supplementary Material](https://drive.google.com/file/d/1zdmYlZL0AQgaK7Nxg26UAoQ8toHtQlSC/view?usp=sharing).
 
 ## Installation
 We recommend `conda` to setup the environment and install the required packages. Conda installation instructions can be found [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html). The following setup assumes Conda is installed and is running on Linux system (though Windows should work too).
@@ -60,11 +60,11 @@ Create the `checkpoints` and `checkpoints/pretrain` subdirectory in `path/to/Sta
 
 `mkdir -p checkpoints/pretrain`
 
-Download our [pretrained weight parameters](https://drive.google.com/file/d/1npWNDJM0lEtslpUNI19b2m_2wNcRTAy-/view?usp=sharing) and put in `checkpoints/pretrain`
+Download our [pretrained weight parameters](https://drive.google.com/drive/folders/1jAr8m4Gqc6kwCpZLROenFj3xP_1nHbuc?usp=sharing) and put in `checkpoints/pretrain`
 
 ### Training and Testing Samples for Finetuning
 
-We provide all training and testing (named as valid.*) samples of finetuning used in our paper at [here](https://drive.google.com/drive/folders/1Ksu6LZRPHX-Yu3jDTLOj19prbtetmmRF?usp=sharing). You can download and put them in `data-src/finetune`.
+We provide all training and testing (named as valid.*) samples of finetuning used in our paper at [here](https://drive.google.com/drive/folders/19xiVWl1qaX2Ml-HD6M4YWfcRMIE84cM9?usp=sharing). You can download and put them in `data-src/finetune`.
 If you want to prepare the finetuning data yourself, make sure you follow the format shown in `data-src/finetune`.
 
 The training/testing samples we provided (that you put in `data-src`) is in plaintext, which facilitates understanding and generating dataset by yourself. 
@@ -100,7 +100,7 @@ It should be easy to edit `./command/finetune/finetune_mips_O0.sh` to finetune o
 
 ### Optional
 
-In case you are interested in pretraining, we have also provided our pretraining (for GSM) dataset at [here](https://drive.google.com/drive/folders/1K2JEuxeIo_qqMksb7plPYFPD8GDp_iry?usp=sharing). Similar to the finetuning dataset, you can download it and put it under `data-src/pretrain`.
+In case you are interested in pretraining, we have also provided our pretraining (for GSM) dataset at [here](https://drive.google.com/drive/folders/1OJfcSnUV_WXl7xrD7NE3BFBBV3qZtJZX?usp=sharing). Similar to the finetuning dataset, you can download it and put it under `data-src/pretrain`.
 
 Similarly, to binarize the pretraining data, run:
 
